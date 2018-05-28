@@ -4,3 +4,4 @@ from django.contrib import admin
 from SolarDB.models import *
 
 admin.site.register(leaseProperty)
+admin.site.register(salesProperty)
