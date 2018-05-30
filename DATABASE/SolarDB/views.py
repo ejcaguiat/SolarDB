@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.sessions.models import Session
 
 from .models import User
 
@@ -37,4 +38,11 @@ def register(request):
     return render(request, 'register.html', context)
 
 def homepage(request):
-    return render(request, 'homepage.html')
+    try:
+        loggeduser = User.objects.get(id=request.session['user'])
+    except(KeyError, User.DoesNotExist):
+        loggeduser = 0
+    context = {
+            'loggeduser':loggeduser,
+    }
+    return render(request, 'homepage.html', context)
