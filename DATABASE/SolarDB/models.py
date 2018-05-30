@@ -125,5 +125,11 @@ class leaseProperty(models.Model):
     
     
 
-#class User(models.Model):
+class User(models.Model):
+    username = models.CharField(max_length=255)
+    password = models.CharField(max_length=50)
+    choices = ((0, 'Regular User'), (1, 'Admin'))
+    accountType = models.IntegerField(choices=choices, default = 0)
+    
+    
     
