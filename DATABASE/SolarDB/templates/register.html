@@ -47,6 +47,17 @@
                                                 <input type="hidden" name="register" value="true" required>
                                                 {% csrf_token %}
 												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                            <div class="row">
+                                <div class="col">
+                                    {% if reg_error %}
+                                        <div class="col"><div class="alert alert-danger"><b>Error!</b> {{ reg_error }}</div></div>
+                                    {% endif %}
+                                    
+                                    {% if reg_success %}
+                                        <div class="col"><div class="alert alert-success"><b>Success!</b> {{ reg_success }}</div></div>
+                                    {% endif %}
+                                </div>
+                            </div>
 											</div>
 										</div>
 									</div>

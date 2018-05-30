@@ -20,7 +20,7 @@ from SolarDB import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name = 'index'),
-    path('register', views.register, name='register'),
-    path('homepage', views.homepage, name='homepage')
+    path('register/', views.register, name='register'),
+    path('homepage/', views.homepage, name='homepage')
     
 ]

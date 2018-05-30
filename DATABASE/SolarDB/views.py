@@ -20,7 +20,8 @@ def index(request):
             except User.DoesNotExist:
                 context['log_error'] = 'Cannot find an account with that combination.'
                 
-    return render(request, 'login.html')
+    return render(request, 'login.html', context)
+
 
 def register(request):
     context = {}
@@ -33,8 +34,7 @@ def register(request):
                            )
                 user.save()
                 context['reg_success'] = "Account has been created."
-            return HttpResponse("hi")
-    return render(request, 'register.html')
+    return render(request, 'register.html', context)
 
 def homepage(request):
     return render(request, 'homepage.html')

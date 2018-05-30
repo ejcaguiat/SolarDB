@@ -45,6 +45,14 @@
                                                 <input type="hidden" name="login" value="true" required>
                                                 {% csrf_token %}
 												    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                        
+                                <div class="row">
+                                    <div class="col">
+                                    {% if log_error %}
+                                        <div class="col"><div class="alert alert-danger"><b>Error!</b> {{ log_error }}</div></div>
+                                    {% endif %}
+                                    </div>
+                                                </div>
 											</div>
 										</div>
 									</div>
