@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="{% static 'css/bootstrap.min.css' %}"rel="stylesheet" id="bootstrap-css">
+	<link href="{% static 'css/bootstrap.min.css' %}"rel="stylesheet">
 	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
     <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,34 +23,13 @@
 				<input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
 			</form>
             {% if loggeduser.accountType == 1 %}
+            <form action="salesform">
+			     <input type="submit" value="Add Sales Properties" class="btn btn-primary btn-lg"/>
+		    </form>
         
-            <div>
-                <div style = "float: left">
-                    <form action="salesform">
-                        <input type="submit" value="Add Sales Properties" class="btn btn-primary btn-lg"/>
-		            </form> 
-                </div>
-                
-                <div style = "float: right">
-                    <form action = "salesform">
-                        <input type = "submit" value = "Edit/Delete Sales" class = "btn btn-primary btn-lg"/>
-                    </form>
-                </div>
-            </div>
-        
-            <div>
-                <div style = "float: left">
-                    <form action="leaseregister">
-                        <input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
-		            </form> 
-                </div>
-                
-                <div style = "float: right">
-                    <form action = "leaseregister">
-                        <input type = "submit" value = "Edit/Delete Lease" class = "btn btn-primary btn-lg"/>
-                    </form>
-                </div>
-            </div>
+            <form action="leaseregister">
+			     <input type="submit" value="Add Lease Properties" class="btn btn-primary btn-lg"/>
+		    </form>
             {% elif loggeduser.accountType == 0 %}
         
             {%endif%}
