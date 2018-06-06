@@ -80,7 +80,7 @@ def leaseview(request):
 
 def leaseregister(request):
     
-    if 'leaseproperty' in request.post:
+    if 'leaseproperty' in request.POST:
         property =leaseProperty(region=request.POST['region']
                                             , province=request.POST['province']
                                            
