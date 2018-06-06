@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
+    <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Lease Properties Summary</title>
+</head> 
+    
+<body>
+<div>
+   <select id="list">
+       <option value="0">Region</option>
+       <option value="1">Province</option>
+       <option value="2">Municipality</option>
+       <option value="3">Barangay</option>
+       <option value="4">Registered Landowner</option>
+       <option value="5">Payee</option>
+       <option value="6">Address</option>
+       <option value="7">Contact Number</option>
+       <option value="8">Tilte No.</option>
+       <option value="9">Tax Declaration</option>
+       <option value="10">Lot No./Survey No.</option>
+       <option value="11">Area</option>
+   </select>    
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+=======
 <!--{% load static %}-->
 <!DOCTYPE html>
 <html>
@@ -38,6 +69,7 @@
             </div>
             
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+>>>>>>> 005a126f8f4444ce7e2cd3ae20f0fefe7691a51e
             
             <table id="myTable">
                 <thead>
@@ -197,6 +229,134 @@
 					    <th>Notoriral Fee(1%)</th>
 				    </tr>
                 </thead>
+<<<<<<< HEAD
+                <tbody>
+                    {% for property  in all_properties%}
+        
+                    <tr id="tr-hover">
+				        <td> {{ property.region}}</td>
+                        <td> {{ property.province}}</td>
+                        <td> {{ property.municipality}}</td>
+                        <td> {{ property.barangay}}</td>
+                        <td> {{ property.regLandOwner}}</td>   
+                        <td> {{ property.Payee}}</td>
+                        <td> {{ property.contactNum}}</td>    
+					    <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> {{ property.pricePerHectare}}</td>    
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>{{ property.BIRcgt}} </td>
+                        <td>{{ property.BIRdst}}  </td>
+                        <td>{{ property.LGUtransfer}}  </td>
+                        <td>{{ property.RODlra}} </td>
+                        <td>{{ property.RODit}}  </td>
+                        <td>{{ property.OTHERSnotorial}} </td>
+                      </tr>
+                </tbody>
+                
+                    {% endfor%}
+            </table>
+            
+    </div>
+</body>
+    
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, dropdown;
+        dropdown = document.getElementById("list").value;
+        
+        
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[dropdown];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+    
+=======
                 <tr id="tr-hover">
                   <td>Alfreds Futterkiste</td>
                   <td>Germany</td>
@@ -448,4 +608,5 @@
     </body>
 	
 	
+>>>>>>> 005a126f8f4444ce7e2cd3ae20f0fefe7691a51e
 </html>
