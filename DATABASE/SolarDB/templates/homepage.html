@@ -23,13 +23,34 @@
 				<input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
 			</form>
             {% if loggeduser.accountType == 1 %}
-            <form action="salesform">
-			     <input type="submit" value="Add Sales Properties" class="btn btn-primary btn-lg"/>
-		    </form>
         
-            <form action="leaseregister">
-			     <input type="submit" value="Add Lease Properties" class="btn btn-primary btn-lg"/>
-		    </form>
+            <div>
+                <div style = "float: left">
+                    <form action="salesform">
+                        <input type="submit" value="Add Sales Properties" class="btn btn-primary btn-lg"/>
+		            </form> 
+                </div>
+                
+                <div style = "float: right">
+                    <form action = "salesform">
+                        <input type = "submit" value = "Edit/Delete Sales" class = "btn btn-primary btn-lg"/>
+                    </form>
+                </div>
+            </div>
+        
+            <div>
+                <div style = "float: left">
+                    <form action="leaseregister">
+                        <input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
+		            </form> 
+                </div>
+                
+                <div style = "float: right">
+                    <form action = "leaseregister">
+                        <input type = "submit" value = "Edit/Delete Lease" class = "btn btn-primary btn-lg"/>
+                    </form>
+                </div>
+            </div>
             {% elif loggeduser.accountType == 0 %}
         
             {%endif%}
