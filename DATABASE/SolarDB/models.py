@@ -1,5 +1,6 @@
 from django.db import models
-import datetime
+from datetime import datetime 
+
 
 # Create your models here.
 class salesProperty(models.Model):
@@ -31,34 +32,34 @@ class salesProperty(models.Model):
     
     #Released Payments
     firstPayAmount = models.FloatField(default = None)
-    firstPayDate = models.DateField( default=None)
+    firstPayDate = models.DateTimeField( default=None)
     
     secPayAmount = models.FloatField(default = 0)
-    secPayDate = models.DateField( default=None)
+    secPayDate = models.DateTimeField( default = datetime.now, blank=True)
     
     thirdPayAmount = models.FloatField(default = 0)
-    thirdPayDate = models.DateField(default=None)
+    thirdPayDate = models.DateField(default=datetime.now, blank=True)
     
     fourthPayAmount = models.FloatField(default = 0)
-    fourthPayDate = models.DateField( default=None)
+    fourthPayDate = models.DateField( default=datetime.now, blank=True)
     
     fifthPayAmount = models.FloatField(default = 0)
-    fifthPayDate = models.DateField( default=None)
+    fifthPayDate = models.DateField( default=datetime.now, blank=True)
     
     sixthPayAmount = models.FloatField(default = 0)
-    sixthPayDate = models.DateField( default=None)
+    sixthPayDate = models.DateField( default=datetime.now, blank=True)
     
     seventhPayAmount = models.FloatField(default = 0)
-    seventhPayDate = models.DateField(default=None)
+    seventhPayDate = models.DateField(default=datetime.now, blank=True)
     
     eigthPayAmount = models.FloatField(default = 0)
-    eigthPayDate = models.DateField(default=None)
+    eigthPayDate = models.DateField(default=datetime.now, blank=True)
     
     ninthPayAmount = models.FloatField(default = 0)
-    ninthPayDate = models.DateField(default=None)
+    ninthPayDate = models.DateField(default=datetime.now, blank=True)
     
     tenthPayAmount = models.FloatField(default = 0)
-    tenthPayDate = models.DateField(default=None)
+    tenthPayDate = models.DateField(default=datetime.now, blank=True)
     
     releasedPayment = models.FloatField(default=None)
     balance = models.FloatField(default=None)
