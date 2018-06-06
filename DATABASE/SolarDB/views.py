@@ -23,6 +23,17 @@ def index(request):
             except User.DoesNotExist:
                 context['log_error'] = 'Cannot find an account with that combination.'
                 
+    if 'register' in request.POST:
+            try:
+                user = User.objects.get(username=request.POST['username'])
+                context['reg_error'] = 'That username is already taken.'
+            except User.DoesNotExist:
+                user = User(username=request.POST['username'], password=request.POST['password']
+                           )
+                user.save()
+                context['reg_success'] = "Account has been created."
+            return render(request, 'register.html', context)
+                
     return render(request, 'login.html', context)
 
 

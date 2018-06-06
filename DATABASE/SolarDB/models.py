@@ -33,31 +33,31 @@ class salesProperty(models.Model):
     firstPayAmount = models.FloatField(default = None)
     firstPayDate = models.DateField( default=None)
     
-    secPayAmount = models.FloatField(default = None)
+    secPayAmount = models.FloatField(default = 0)
     secPayDate = models.DateField( default=None)
     
-    thirdPayAmount = models.FloatField(default = None)
+    thirdPayAmount = models.FloatField(default = 0)
     thirdPayDate = models.DateField(default=None)
     
-    fourthPayAmount = models.FloatField(default = None)
+    fourthPayAmount = models.FloatField(default = 0)
     fourthPayDate = models.DateField( default=None)
     
-    fifthPayAmount = models.FloatField(default = None)
+    fifthPayAmount = models.FloatField(default = 0)
     fifthPayDate = models.DateField( default=None)
     
-    sixthPayAmount = models.FloatField(default = None)
+    sixthPayAmount = models.FloatField(default = 0)
     sixthPayDate = models.DateField( default=None)
     
-    seventhPayAmount = models.FloatField(default = None)
+    seventhPayAmount = models.FloatField(default = 0)
     seventhPayDate = models.DateField(default=None)
     
-    eigthPayAmount = models.FloatField(default = None)
+    eigthPayAmount = models.FloatField(default = 0)
     eigthPayDate = models.DateField(default=None)
     
-    ninthPayAmount = models.FloatField(default = None)
+    ninthPayAmount = models.FloatField(default = 0)
     ninthPayDate = models.DateField(default=None)
     
-    tenthPayAmount = models.FloatField(default = None)
+    tenthPayAmount = models.FloatField(default = 0)
     tenthPayDate = models.DateField(default=None)
     
     releasedPayment = models.FloatField(default=None)
@@ -106,6 +106,7 @@ class leaseProperty(models.Model):
     #End of Payment Details
     
     #Released Payments
+
     
     
     
@@ -126,7 +127,6 @@ class leaseProperty(models.Model):
     dateRelease = models.DateField(default=None)
     
     
-
 class User(models.Model):
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=50)
