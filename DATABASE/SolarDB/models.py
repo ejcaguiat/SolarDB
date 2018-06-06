@@ -72,6 +72,7 @@ class salesProperty(models.Model):
     RODit = models.FloatField(default=None)
     OTHERSnotorial = models.FloatField(default=None)
     SUMother = models.FloatField(default=None)
+    #missing LBP column
     TAXother = models.FloatField(default=None)
     #End of Taxes and Registration Fees
     
@@ -83,6 +84,7 @@ class salesProperty(models.Model):
     
     
 class leaseProperty(models.Model):
+    #missing title number, lot no, advance payment (lease price per year, amount, date release), years 1-30, balance
     
     #Location Details
     region = models.CharField(max_length = 255)

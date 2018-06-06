@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.sessions.models import Session
 
 from .models import User
+from .models import salesProperty
+from .models import leaseProperty
 
 # Create your views here.
 def index(request):
@@ -47,11 +49,33 @@ def homepage(request):
     }
     return render(request, 'homepage.html', context)
 
+def salesview(request):
+    all_properties =salesProperty.objects.all()
+    context = {
+            'all_properties':all_properties,
+    }
+
+    
+    return render(request, 'displaysales.html',context)
+
+def leaseview(request):
+    all_properties =leaseProperty.objects.all()
+    context = {
+            'all_properties':all_properties,
+    }
+
+    
+    return render(request, 'displaylease.html',context)
+
+def leaseregister(request):
+
+    return render(request, 'lease_form.html')
+
 def salesregister(request):
     
     context = {}
     if 'addproperty' in request.POST:
-                property = Sales propertys(region=request.POST['region']
+                property =salesProperty(region=request.POST['region']
                                             , province=request.POST['province']
                                            
                                             , municipality=request.POST['municipality']
@@ -69,7 +93,7 @@ def salesregister(request):
                                            , areaHectares=request.POST['size']
                                            , surveyNum=request.POST['surveynumber']
                                            
-                                           ,pricePerHectare=request.POST['leasepriceperhectare]
+                                           ,pricePerHectare=request.POST['leasepriceperhectare']
                                            
                                            , firstPayAmount=request.POST['1stpayment_amount']
                                            , firstPayDate=request.POST['1stpayment_date']
@@ -103,29 +127,32 @@ def salesregister(request):
                                            , tenthPayDate=request.POST['10thpayment_date']
                                            
                                            , BIRcgt=request.POST['cgt_amount']
-                                           , cgtdaterelease=request.POST['cgt_date']
+                                           
                                            
                                            , BIRdst=request.POST['dst_amount']
-                                           , dstdaterelease=request.POST['dst_date']
+                                           
                                            
                                            , LGUtransfer=request.POST['transferfees_amount']
-                                           , transferfeedaterelease=request.POST['transferfees_date']
+                                           
                                            
                                            , RODlra=request.POST['lrafee_amount']
-                                           , lrafeedaterelease=request.POST['lrafee_date']
+                                           
                                            
                                            , RODit=request.POST['itfee_amount']
-                                           , itfeedaterelease=request.POST['itfee_date']
+                                            , OTHERSnotorial=request.POST['notarialfee_amount']
+                                           ,totalContractPrice= 0000
+                                            , releasedPayment =0000
+                                        , balance =0000
+                                        , SUMother =0000
+                                        , TAXother =0000
+                                        , area =0000
                                            
-                                           ,lbpamtrelease=request.POST['lbp_amount']
-                                           , lbpdaterelease=request.POST['lbp_date']
                                            
-                                           , OTHERSnotorial=request.POST['notarialfee_amount']
-                                           , notorialfeedaterelease=request.POST['notarialfee_date']
                 
                            )
                 property.save()
-                context['reg_success'] = "Account has been created."
-                
-    return render(request, 'register.html', context)
+                return render(request, 'sales_form.html')
+       
     return render(request, 'sales_form.html')
+
+
