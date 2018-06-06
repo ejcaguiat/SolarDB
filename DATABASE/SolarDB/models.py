@@ -32,34 +32,34 @@ class salesProperty(models.Model):
     
     #Released Payments
     firstPayAmount = models.FloatField(default = None)
-    firstPayDate = models.DateTimeField( default=None)
+    firstPayDate = models.CharField( max_length = 255)
     
     secPayAmount = models.FloatField(default = 0)
-    secPayDate = models.DateTimeField( default = datetime.now, blank=True)
+    secPayDate = models.CharField( max_length = 255)
     
     thirdPayAmount = models.FloatField(default = 0)
-    thirdPayDate = models.DateField(default=datetime.now, blank=True)
+    thirdPayDate = models.CharField(max_length = 255)
     
     fourthPayAmount = models.FloatField(default = 0)
-    fourthPayDate = models.DateField( default=datetime.now, blank=True)
+    fourthPayDate = models.CharField(max_length = 255)
     
     fifthPayAmount = models.FloatField(default = 0)
-    fifthPayDate = models.DateField( default=datetime.now, blank=True)
+    fifthPayDate = models.CharField(max_length = 255)
     
     sixthPayAmount = models.FloatField(default = 0)
-    sixthPayDate = models.DateField( default=datetime.now, blank=True)
+    sixthPayDate = models.CharField(max_length = 255)
     
     seventhPayAmount = models.FloatField(default = 0)
-    seventhPayDate = models.DateField(default=datetime.now, blank=True)
+    seventhPayDate = models.CharField(max_length = 255)
     
     eigthPayAmount = models.FloatField(default = 0)
-    eigthPayDate = models.DateField(default=datetime.now, blank=True)
+    eigthPayDate = models.CharField(max_length = 255)
     
     ninthPayAmount = models.FloatField(default = 0)
-    ninthPayDate = models.DateField(default=datetime.now, blank=True)
+    ninthPayDate = models.CharField(max_length = 255)
     
     tenthPayAmount = models.FloatField(default = 0)
-    tenthPayDate = models.DateField(default=datetime.now, blank=True)
+    tenthPayDate = models.CharField(max_length = 255 )
     
     releasedPayment = models.FloatField(default=None)
     balance = models.FloatField(default=None)
