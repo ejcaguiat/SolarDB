@@ -95,13 +95,13 @@ def leaseregister(request):
                                            
                                            , titleNum=request.POST['titlenumber']
                                            , lotNum=request.POST['lotnumber']
-                                            , areaHectares=request.POST['size']
-                                           , surveyNum=request.POST['surveynumber']
+                                        
+                                           
                                             ,pricePerHectare=request.POST['leasepriceperhectare']
                                             
                                 , year1Pay=request.POST['year1Pay']
                                            , year1Date=request.POST['year1Date']
-                                , year2Pay=request.POST['yea2rPay']
+                                , year2Pay=request.POST['year2Pay']
                                            , year2Date=request.POST['year2Date']
                                 , year3Pay=request.POST['year3Pay']
                                            , year3Date=request.POST['year3Date']
@@ -109,7 +109,7 @@ def leaseregister(request):
                                            , year4Date=request.POST['year4Date']
                                 , year5Pay=request.POST['year5Pay']
                                            , year5Date=request.POST['year5Date']
-                                , year6Pay=request.POST['yea6rPay']
+                                , year6Pay=request.POST['year6Pay']
                                            , year6Date=request.POST['year6Date']
                                 , year7Pay=request.POST['year7Pay']
                                            , year7Date=request.POST['year7Date']
@@ -165,7 +165,7 @@ def leaseregister(request):
                                            , year30Date=request.POST['year30Date']
                                 
                                 
-                                
+                                            
                                              , BIRcgt=request.POST['cgt_amount']
                                            
                                            
@@ -180,6 +180,12 @@ def leaseregister(request):
                                            
                                            , RODit=request.POST['itfee_amount']
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
+                                        ,totalContractPrice= 0000
+                                        ,dateRelease= "1111-11-11"
+                                        , area= 0000
+                                        , SUMother =0000
+                                , TAXother =0000
+                                , balance= 0000
 
     
                            )
@@ -207,7 +213,7 @@ def salesregister(request):
                                            , titleNum=request.POST['titlenumber']
                                            , lotNum=request.POST['lotnumber']
                                            
-                                           , areaHectares=request.POST['size']
+                                           
                                            , surveyNum=request.POST['surveynumber']
                                            
                                            ,pricePerHectare=request.POST['leasepriceperhectare']

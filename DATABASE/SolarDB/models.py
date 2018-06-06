@@ -110,8 +110,8 @@ class leaseProperty(models.Model):
     
     advPayment = models.FloatField(default = 0)
 
-    year20Pay = models.FloatField(default = 0)
-    year20Date = models.CharField(max_length = 255,   default = "")
+    year1Pay = models.FloatField(default = 0)
+    year1Date = models.CharField(max_length = 255,   default = "")
     
     year2Pay = models.FloatField(default = 0)
     year2Date = models.CharField(max_length = 255,   default = "")
